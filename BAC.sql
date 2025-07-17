@@ -72,3 +72,47 @@ insert into voter_list(name,age) values('ganesh',21);
 select * from voter_list;
 
 drop table voter_list;
+drop table employee;
+
+
+create table department
+	(id serial primary key,
+	department_name varchar(388) not null unique,
+	salary int not null);
+insert into department (department_name,salary) values('HR',5000);
+insert into department (department_name,salary) values ('IT',150);
+insert into department (department_name,salary) values ('SALES',1000);
+insert into department (department_name,salary) values ('FINANCE',4367);
+
+select * from department;
+
+
+create table employee 
+	(id serial primary key,
+	employee_name varchar(309) not null ,
+	department int not null references department(id));
+
+insert into employee(employee_name,department) values('sarvesh',4);
+insert into employee(employee_name,department) values('soham',1);
+insert into employee(employee_name,department) values('shakti',3);
+insert into employee(employee_name,department) values('mukesh',2);
+insert into employee(employee_name,department) values('raunak',4);
+insert into employee(employee_name,department) values('mangesh',3);
+insert into employee(employee_name,department) values('ragesh',2);
+insert into employee(employee_name,department) values('yugesh',1);
+insert into employee(employee_name,department) values('korekar',4);
+insert into employee(employee_name,department) values('gaokar',3);
+select * from employee;
+
+
+
+
+
+
+
+
+
+
+	
+
+	
