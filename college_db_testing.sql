@@ -10,7 +10,7 @@ insert into stream_selection (stream_selection_A) values('COMMERCE');
 insert into stream_selection (stream_selection_A) values ('ARTS');
 
 select * from stream_selection;
-drop table stream_selection;
+-- drop table stream_selection;
 
 create table students_data 
 	(id serial primary key,
@@ -21,7 +21,7 @@ create table students_data
 	E_mail_add varchar(340) not null unique
 	);
 
-
+select * from students_data;
 insert into students_data(students,stream_selection,MOBILE_NO,Percentage,E_mail_add)  
 	values( 'ram',1,'9820308120',83,'qwerty@gmail.com' );
 
@@ -117,3 +117,8 @@ values ('ajay', 1, '9871234560', 72, 'ajay_rao99@gmail.com');
 
 drop table students_data;
 select * from students_data;
+
+
+select * from stream_selection
+inner join  students_data 
+on  stream_selection.id =  students_data.id;
